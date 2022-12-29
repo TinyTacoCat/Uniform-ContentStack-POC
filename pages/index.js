@@ -24,9 +24,13 @@ export async function getStaticProps({ preview }) {
     state: preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
   });
 
+  console.log(composition);
+
   // LESSON 8 - ACTIVITY 10 - START
   await doEnhance(composition);
   // LESSON 8 - ACTIVITY 10 - END
+
+  console.log(composition);
 
   return {
     props: {
