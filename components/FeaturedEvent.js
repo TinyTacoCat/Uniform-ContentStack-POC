@@ -2,8 +2,12 @@ import React from "react";
 
 //Remember to add export to components/index.js
 export const FeaturedEvent = ({ component }) => {
-  const { name, description, date } =
-    component?.parameters?.event?.value?.fields ?? {};
+  const { name } =
+    component?.parameters?.event?.value ?? {};
+  const { description } =
+    component?.parameters?.event?.value ?? {};
+  const { date } =
+    component?.parameters?.event?.value ?? {};
   return (
     <div>
       <hr />
