@@ -9,6 +9,7 @@ import { Composition, Slot } from "@uniformdev/canvas-react";
 import resolveRenderer from "../lib/resolveRenderer";
 import { useLivePreviewNextStaticProps } from "../hooks/useLivePreviewNextStaticProps";
 import getConfig from "next/config";
+import { localize } from '@uniformdev/canvas';
 
 // LESSON 8 - ACTIVITY 10 - START
 import doEnhance from "../lib/enhancer";
@@ -22,6 +23,17 @@ export async function getStaticProps({ preview }) {
   const { composition } = await client.getCompositionBySlug({
     slug: "home",
     state: preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
+  });
+
+  localize({
+    composition,
+    locale: ({ locales }) => {
+      if (locales === ('NL-nl')) {
+        return 'NL-nl';
+      }
+      console.log(locales);
+      return 'us-en';
+    }
   });
 
   // LESSON 8 - ACTIVITY 10 - START
