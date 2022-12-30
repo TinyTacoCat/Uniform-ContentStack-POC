@@ -21,26 +21,6 @@
               }
             ]
           }
-        },
-        "heroPersonalization": {
-          "str": 50,
-          "cap": 100,
-          "dur": "t",
-          "crit": {
-            "op": "&",
-            "type": "G",
-            "clauses": [
-              {
-                "type": "QS",
-                "match": {
-                  "cs": false,
-                  "op": "=",
-                  "rhs": "demo"
-                },
-                "queryName": "hero"
-              }
-            ]
-          }
         }
       }
     },

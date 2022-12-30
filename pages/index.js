@@ -20,7 +20,7 @@ export async function getStaticProps({ preview }) {
     projectId: process.env.UNIFORM_PROJECT_ID,
   });
   const { composition } = await client.getCompositionBySlug({
-    slug: "/",
+    slug: "home",
     state: preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
   });
 
