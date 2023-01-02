@@ -25,20 +25,24 @@ export async function getStaticProps({ preview }) {
     state: preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
   });
 
+  console.log("----------------FIRST-----------------------");
+  console.log(JSON.stringify(composition))
+
   localize({
     composition,
-    locale: ({ locales }) => {
-      if (locales === ('NL-nl')) {
-        return 'NL-nl';
-      }
-      console.log(locales);
-      return 'us-en';
-    }
+    locale: 'NL-nl',
   });
+
+  console.log("---------------------------------------");
+  console.log(JSON.stringify(composition))
 
   // LESSON 8 - ACTIVITY 10 - START
   await doEnhance(composition);
   // LESSON 8 - ACTIVITY 10 - END
+
+  console.log("---------------------------------------");
+  console.log(JSON.stringify(composition))
+
 
   return {
     props: {

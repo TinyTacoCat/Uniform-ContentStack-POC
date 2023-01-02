@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export default function LanguageSelector(){
     const languageOptions = [
-        { value: 'us-en', label: 'English' },
+        { value: 'en', label: 'English' },
         { value: 'NL-nl', label: 'Dutch' },
         { value: 'HU-hu', label: 'Hungarian' }
     ];
